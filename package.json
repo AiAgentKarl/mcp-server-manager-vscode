@@ -1,0 +1,77 @@
+{
+  "name": "mcp-server-manager",
+  "displayName": "MCP Server Manager",
+  "description": "Browse, install and manage MCP servers for AI agents — the App Store for MCP",
+  "version": "0.1.0",
+  "publisher": "AiAgentKarl",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AiAgentKarl/mcp-server-manager-vscode"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "mcp",
+    "ai",
+    "agent",
+    "model-context-protocol",
+    "claude",
+    "llm"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mcpManager.browseServers",
+        "title": "MCP: Browse Servers"
+      },
+      {
+        "command": "mcpManager.installServer",
+        "title": "MCP: Install Server"
+      },
+      {
+        "command": "mcpManager.removeServer",
+        "title": "MCP: Remove Server"
+      },
+      {
+        "command": "mcpManager.showInstalled",
+        "title": "MCP: Show Installed Servers"
+      },
+      {
+        "command": "mcpManager.refreshCatalog",
+        "title": "MCP: Refresh Server Catalog"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mcpServerManager",
+          "title": "MCP Servers",
+          "icon": "$(extensions)"
+        }
+      ]
+    },
+    "views": {
+      "mcpServerManager": [
+        {
+          "id": "mcpInstalled",
+          "name": "Installed"
+        },
+        {
+          "id": "mcpCatalog",
+          "name": "Available Servers"
+        }
+      ]
+    }
+  }
+}
